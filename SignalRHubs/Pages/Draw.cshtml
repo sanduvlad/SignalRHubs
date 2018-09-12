@@ -1,0 +1,20 @@
+﻿@page
+@model SignalRHubs.Pages.DrawModel
+@{
+    ViewData["Title"] = "Draw";
+}
+
+<h2>Draw</h2>
+
+<canvas id="drawingArea" width="400" height="400" 
+        onclick="MouseClickedEvent()"
+        onmouseup="MouseUpEvent()" onmousemove="MouseMovedEvent()" style="background-color:antiquewhite;">
+
+</canvas>
+
+<button id="ResetButton" onclick="ResetButtonPressed()">Reset Canvas</button>
+<p id="lblNumberOfSessions"></p>
+
+
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/draw/drawlogic.js"></script>
