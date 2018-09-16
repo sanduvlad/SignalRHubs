@@ -35,3 +35,24 @@ body {
         display: none;
     }
 }
+
+
+.selecteUserToChat{
+    background-color: black;
+    color:white;
+}
+
+.tempDiv{
+
+}
+
+.tempDiv2{
+
+}
+
+.pp {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #6ba1ca;
+    border-radius: 4px;
+}
