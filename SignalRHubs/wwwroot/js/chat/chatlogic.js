@@ -73,6 +73,9 @@ connection.on("MessageReceivedFrom", function (senderUsername, message) {
     tempDiv.appendChild(tempDiv2);
 
     htmlMessageHistory.append(tempDiv);
+
+    ScrollMessagesToBotton();
+
 });
 
 function HtmlUserClicked(username) {
@@ -91,6 +94,10 @@ function Loaded() {
     thisUserName = username;
 }
 
+
+function ScrollMessagesToBotton() {
+    $("#messagesHistory").scrollTop($("#messagesHistory").height());
+}
 
 function SendMessageButtonEvent() {
     var text = htmlMessageBox.val();
@@ -133,7 +140,7 @@ function SendMessageButtonEvent() {
 
     connection.invoke("SendMessageTo", thisUserName, currentChatingUser, text);
 
-
+    ScrollMessagesToBotton();
     
 
     
