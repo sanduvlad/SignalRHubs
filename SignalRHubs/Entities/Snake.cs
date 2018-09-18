@@ -24,9 +24,19 @@ namespace SignalRHubs.Entities
 
         public List<SnakeTail> MoveToNewCoord(int xAxis, int yAxis)
         {
-            var head = SnakeTail[0];
-            SnakeTail[0].X += xAxis;
-            SnakeTail[0].Y += yAxis;
+            var oldTail = SnakeTail.Select(s => new SnakeTail() { X = s.X, Y = s.Y }).ToList();
+            var newTail = SnakeTail.Select(s => new SnakeTail() { X = s.X, Y = s.Y }).ToList();
+
+            newTail[0].X += xAxis;
+            newTail[0].Y += yAxis;
+            
+            for (int i = 1; i < oldTail.Count; i++)
+            {
+                newTail[i] = oldTail[i - 1];
+            }
+
+            SnakeTail = newTail.Select(s => new SnakeTail() { X = s.X, Y = s.Y }).ToList();
+            return newTail;
         }
     }
 

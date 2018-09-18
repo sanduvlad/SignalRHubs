@@ -59,6 +59,7 @@ namespace SignalRHubs
             {
                 routes.MapHub<DrawingHub>("/DrawWithMe");
                 routes.MapHub<ChatHub>("/ChatWithMe");
+                routes.MapHub<SnakeHub>("/SnakeGameSSS");
             });
 
             app.UseMvc();
